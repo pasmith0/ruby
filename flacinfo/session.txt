@@ -1,0 +1,40 @@
+Here is FlacInfo's Rdoc documentation.
+
+Here is a brief example irb session:
+
+irb(main):001:0> require 'flacinfo'
+=> true
+irb(main):002:0> song = FlacInfo.new("manuChao-denia.flac")
+=> # (VORBIS_COMMENT size=208 offset=536) (PADDING size=4096 offset=748)>
+irb(main):003:0> song.print_tags
+artist: Manu Chao
+tracknumber: 07/17
+title: Denia
+date: 2001
+vendor_tag: reference libFLAC 1.1.2 20050205
+genre: Latin Reggae
+album: Prxima Estacin Esperanza
+offset: 536
+block_size: 208
+comment: Starbellied using sneetchalizer
+=> nil
+irb(main):004:0> song.comment_del("album")
+=> true
+irb(main):005:0> song.comment_add("album=Próxima Estación: Esperanza")
+=> true
+irb(main):006:0> song.update
+=> true
+irb(main):007:0> song.print_tags
+artist: Manu Chao
+tracknumber: 07/17
+title: Denia
+date: 2001
+vendor_tag: reference libFLAC 1.1.2 20050205
+genre: Latin Reggae
+album: Próxima Estación: Esperanza
+offset: 536
+block_size: 211
+comment: Starbellied using sneetchalizer
+=> nil
+irb(main):008:0> exit
+

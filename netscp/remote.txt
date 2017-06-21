@@ -1,0 +1,5 @@
+http://70.91.2.235:8080
+http://69.30.47.91:8080
+http://www.freedtvroom.com
+http://stbproxy.icuetv.com:9084
+http://zen.enabletv.com:8080
