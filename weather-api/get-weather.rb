@@ -34,15 +34,15 @@ while i < 3 do
     i += 1
 end
 
-printf "  Now:\t%s, %s°%s, Wind %s%s %s, Humidity %s%%, Barometer %s @ %s%s\n", 
+printf "  Now: %s, %s°%s, Wind %s%s %s, Humidity %s%%, Barometer %s @ %s%s\n", 
     response.condition.text, response.condition.temp, tempUnits, 
     response.wind.speed, windUnits, 
     response.wind.direction, 
     response.atmosphere.humidity, 
     response.atmosphere.barometer, response.atmosphere.pressure, baroUnits
-printf "  %s:\t%-#{width}s,\t%s°%s - %s°%s\n", response.forecasts[0].day, response.forecasts[0].text, response.forecasts[0].low, tempUnits, response.forecasts[0].high, tempUnits 
-printf "  %s:\t%-#{width}s,\t%s°%s - %s°%s\n", response.forecasts[1].day, response.forecasts[1].text, response.forecasts[1].low, tempUnits, response.forecasts[1].high, tempUnits
-printf "  %s:\t%-#{width}s,\t%s°%s - %s°%s\n", response.forecasts[2].day, response.forecasts[2].text, response.forecasts[2].low, tempUnits, response.forecasts[2].high, tempUnits
+printf "  %s: %-#{width}s %s°%s - %s°%s\n", response.forecasts[0].day, response.forecasts[0].text, response.forecasts[0].low, tempUnits, response.forecasts[0].high, tempUnits 
+printf "  %s: %-#{width}s %s°%s - %s°%s\n", response.forecasts[1].day, response.forecasts[1].text, response.forecasts[1].low, tempUnits, response.forecasts[1].high, tempUnits
+printf "  %s: %-#{width}s %s°%s - %s°%s\n", response.forecasts[2].day, response.forecasts[2].text, response.forecasts[2].low, tempUnits, response.forecasts[2].high, tempUnits
 
 #tp.set :separator, ","
 #tp.set :time_format, "%m/%d"
