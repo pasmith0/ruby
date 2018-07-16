@@ -34,7 +34,12 @@ while i < 3 do
     i += 1
 end
 
-printf "  Now: %s, %s°%s, Wind %s%s %s, Humidity %s%%, Barometer %s @ %s%s\n", 
+if response.condition.text.length > width
+   width = response.condition.text
+end
+
+
+printf "  Now: %-#{width}s %s°%s, Wind %s%s %s, Humidity %s%%, Barometer %s @ %s%s\n", 
     response.condition.text, response.condition.temp, tempUnits, 
     response.wind.speed, windUnits, 
     response.wind.direction, 
